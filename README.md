@@ -4,12 +4,16 @@
 </p>
 
 
-### Support command
+### Target Commands
 
 ```shell
-Usage: pg_selective [OPTIONS] --host <HOST> --port <PORT> --username <USERNAME> --password <PASSWORD> --dbname <DBNAME> --schema <SCHEMA> --table-name <TABLE_NAME>
+Usage: pg_selective [OPTIONS] --host <HOST> --port <PORT> \
+        --username <USERNAME> --password <PASSWORD> \
+        --dbname <DBNAME> --schema <SCHEMA> --table-name <TABLE_NAME>
 ```
 
+Available Options:
+```shell
 Connection options:
   -H, --host <HOST>              Database server host or socket dirctory
   -P, --port <PORT>              Database server port number
@@ -27,10 +31,11 @@ General options:
 
 
 Options controlling the output content:
-  -a, --data-only                Dump only the data, not the schema
+  -c, --condition <CONDITION>    Condition query
   -E, --encoding <ENCODING>      Dump the data in encoding ENCODING
   -O, --no-owner                 Skip restoration of object ownership in plain-text format
-  -c, --condition <CONDITION>    Condition quer
+  -a, --data-only                Dump only the data, not the schema
   --column-inserts               Dump data as INSERT commands with column names
   --if-exists                    Use IF EXISTS when dropping objects
   --inserts                      Dump data as INSERT commands, rather than COPY
+```
