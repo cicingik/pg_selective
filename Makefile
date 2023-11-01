@@ -3,6 +3,10 @@
 run: ## Compile binary of application
 	@cargo run
 
+.PHONY: check
+check: ## Check functionality
+	@./cek.sh
+
 
 .PHONY: help
 .DEFAULT_GOAL := help

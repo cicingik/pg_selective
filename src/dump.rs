@@ -5,7 +5,7 @@ use std::process::Command;
 pub fn pg_dump(option: &Cli) -> Result<(), Box<dyn Error>> {
     let mut cmd = Command::new("pg_dump");
 
-    // cheat pg_dump for not promt password :*
+    // cheat pg_dump for not prompt password :*
     cmd.env("PGPASSWORD", option.password.clone());
 
     cmd.arg(format!("--dbname={}", option.dbname));
@@ -36,7 +36,7 @@ pub fn pg_dump(option: &Cli) -> Result<(), Box<dyn Error>> {
         cmd.arg("--verbose");
     }
 
-    if option.column_insert {
+    if option.column_inserts {
         cmd.arg("--column-insert");
     }
 
